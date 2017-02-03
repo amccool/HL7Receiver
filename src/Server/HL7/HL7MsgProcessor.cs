@@ -1,8 +1,16 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Security.Cryptography;
 using NHapi.Base.Model;
 using NHapi.Base.Util;
+using NHapi.Model.V24.Datatype;
+using NHapi.Model.V24.Segment;
 using Receiver.HL7Tools;
 using Receiver.Interfaces;
+
 
 
 namespace Receiver.HL7
@@ -19,6 +27,7 @@ namespace Receiver.HL7
             //    errorMessage = "This message structure is not supported.";
             //    return false;
             //}
+
             switch (hl7Message.Version)
             {
                 case HL7Version.V23:
@@ -27,22 +36,29 @@ namespace Receiver.HL7
                         hl7Message.GetStructure("PID");
                     Console.WriteLine("PatientID {0}.", pid1.GetAlternatePatientID(0).ID.Value);
                     break;
+                
+               
                 case HL7Version.V24:
-                    // Add code to handle the V2.4 of these ADT messages
-                    NHapi.Model.V24.Segment.PID pid2 = (NHapi.Model.V24.Segment.PID)
-                        hl7Message.GetStructure("PID");
-
-                    Console.WriteLine("PatientID {0}.", pid2.PatientID.ID.Value);
-                    break;
-                case HL7Version.V26:
-                    // Add code to handle the V2.6
+                    
                     var x = new Terser(hl7Message);
+                    PID pid = (PID) x.Finder.findSegment("PID", 0);
+                    OBX res = (OBX)x.Finder.findSegment("OBX", 0);
+                    
 
-                    var res = x.Get("/.OBX-3-1");
 
-                    //var obx = (NHapi.Model.V26.Segment.OBX) hl7Message.GetStructure("OBX");
+                    ED ov = (ED)res.GetObservationValue(0).Data;
 
-                    Console.WriteLine("OvservationValue {0}.", res);
+                    var file = Convert.FromBase64String(ov.Data.Value);
+                    
+                    using (Image image = Image.FromStream(new MemoryStream(file)))
+                    {
+                        image.Save("output.jpg", ImageFormat.Jpeg); 
+
+                        Process.Start("output.jpg", "");
+
+                    }
+                    
+                    Console.WriteLine("OvservationValue {0}.", pid.GetPatientName(0).SecondAndFurtherGivenNamesOrInitialsThereof +" "+ pid.GetPatientName(0).GivenName +" "+pid.GetPatientName(0).FamilyName);
                     break;
 
                 default:

@@ -1,1 +1,0 @@
-C:\Development\HL7 Receiver\C#\Server\bin\Debug\Receiver.exe.config

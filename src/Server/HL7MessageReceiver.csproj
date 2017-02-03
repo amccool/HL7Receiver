@@ -93,8 +93,41 @@
       <HintPath>..\packages\nHapi.2.5.0.6\lib\NHapi.Model.V281.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NHapiTools.Base, Version=1.6.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHapiTools.1.6.0.3\lib\NHapiTools.Base.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHapiTools.Model.V21, Version=1.6.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHapiTools.1.6.0.3\lib\NHapiTools.Model.V21.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHapiTools.Model.V22, Version=1.6.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHapiTools.1.6.0.3\lib\NHapiTools.Model.V22.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHapiTools.Model.V23, Version=1.6.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHapiTools.1.6.0.3\lib\NHapiTools.Model.V23.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHapiTools.Model.V231, Version=1.6.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHapiTools.1.6.0.3\lib\NHapiTools.Model.V231.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHapiTools.Model.V24, Version=1.6.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHapiTools.1.6.0.3\lib\NHapiTools.Model.V24.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHapiTools.Model.V25, Version=1.6.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHapiTools.1.6.0.3\lib\NHapiTools.Model.V25.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHapiTools.Model.V251, Version=1.6.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHapiTools.1.6.0.3\lib\NHapiTools.Model.V251.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
